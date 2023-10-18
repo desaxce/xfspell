@@ -8,6 +8,10 @@ This is a Transformer-based English spell checker trained on 7M+ generated paral
 
 - Clone this repository
 - Create a virtual environment (e.g., `python3 -m venv .pyenv`)
+- Activate the created virtual environment (e.g., `source .pyenv/bin/activate`)
+- For Manjaro users, install aspell (`pacman -S aspell`), otherwise the aspell-python-py3 fails to find `aspell.h`
+- If on Python 3.11, make sure that `requirements.txt` does not reference exact versions (`==`), but only minimal versions (`>=`), otherwise pip fails to build certain wheels with a `missing longintrepr.h` error message
+- If on Python 3.11, comment out the `fairseq` dependency in `requirements.txt` and use specify instead `git+https://github.com/One-sixth/fairseq.git` (from https://github.com/facebookresearch/fairseq/issues/5012#issuecomment-1675400618): 3.11 introduced constraints on the use of `@dataclass` and the fix was slow to come for fairseq 12.2
 - Install requirements (e.g., `pip install -r requirements.txt`)
 - Download [the pretrained model](https://xfspell.s3.amazonaws.com/models/model7m.tar.gz) and extract the content (`tar zxvf model7m.tar.gz`)
 - Run: 

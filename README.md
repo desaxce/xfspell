@@ -49,6 +49,8 @@ $ echo "The books Tom and Jerry put on the yellow desk yesterday war about NLP."
 The books Tom and Jerry put on the yellow desk yesterday were about NLP.
 ```
 
+Interestingly, if you miss the `.` or remove the trailing `w` in `yellow`, the command above will leave `war` untouched.
+
 ## How it's built
 
 See [The Unreasonable Effectiveness of the Transformer Spell Checker](http://www.realworldnlpbook.com/blog/unreasonable-effectiveness-of-transformer-spell-checker.html).
